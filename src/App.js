@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import "./App.css";
+
 
 export default function App() {
   const [countries, setCountries] = useState([]);
@@ -42,6 +44,7 @@ export default function App() {
   {
   searchCountries()
   }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   ,[searchText])
 
 
@@ -92,7 +95,7 @@ export default function App() {
       </div>
     <div style={containerStyle}>
         {searchData.map((country) => (
-          <div key={country.cca3} style={cardStyle}>
+          <div key={country.cca3} style={cardStyle} className="countryCard">
             <img
               src={country.flags.png}
               alt={`Flag of ${country.name.common}`}
